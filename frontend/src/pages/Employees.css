@@ -1,0 +1,16 @@
+.filter-bar { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.filter-select-wrap { position: relative; display: flex; align-items: center; }
+.filter-icon { position: absolute; left: 12px; color: var(--text-muted); z-index: 1; pointer-events: none; }
+.filter-select { padding-left: 34px; min-width: 180px; background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-sm); }
+
+.emp-cell { display: flex; align-items: center; gap: 12px; }
+.emp-name { font-weight: 600; font-size: 0.875rem; }
+.emp-email { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
+.text-mono { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text-secondary); }
+.action-btns { display: flex; gap: 6px; justify-content: flex-end; }
+
+@media (max-width: 768px) {
+  .filter-bar { flex-direction: column; align-items: stretch; }
+  .search-bar { max-width: 100% !important; }
+  .filter-select { min-width: 100%; }
+}

@@ -1,0 +1,47 @@
+.leave-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-chip {
+  padding: 7px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  color: var(--text-secondary); cursor: pointer; text-transform: capitalize;
+  transition: all var(--transition-fast);
+}
+.filter-chip:hover { border-color: var(--accent-teal); color: var(--text-primary); }
+.filter-chip-active {
+  background: rgba(0,229,255,0.1); border-color: var(--accent-teal);
+  color: var(--accent-cyan);
+}
+
+.leave-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.leave-card {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--radius-md); padding: 20px;
+  transition: all var(--transition-base);
+}
+.leave-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.leave-type-badge {
+  padding: 4px 12px; border-radius: 16px; font-size: 0.75rem;
+  font-weight: 700; text-transform: capitalize;
+}
+.leave-applicant { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.leave-applicant-name { font-size: 0.85rem; font-weight: 600; }
+.leave-applicant-dept { font-size: 0.72rem; color: var(--text-muted); }
+.leave-dates {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+  padding: 10px 14px; background: var(--bg-input); border-radius: var(--radius-sm);
+}
+.leave-date-label { display: block; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.leave-date-value { font-size: 0.85rem; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+.leave-date-sep { width: 20px; height: 1px; background: var(--border-color); }
+.leave-days-badge {
+  margin-left: auto; padding: 4px 10px; border-radius: 12px;
+  background: rgba(0,229,255,0.08); color: var(--accent-cyan);
+  font-size: 0.8rem; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+}
+.leave-reason { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px; }
+.leave-remarks { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
+.leave-card-actions { display: flex; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-color); }
+
+@media (max-width: 768px) {
+  .leave-grid { grid-template-columns: 1fr; }
+  .leave-dates { flex-wrap: wrap; gap: 8px; }
+}

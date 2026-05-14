@@ -1,0 +1,85 @@
+.sidebar {
+  position: fixed; top: 0; left: 0; height: 100vh;
+  background: var(--bg-sidebar); border-right: 1px solid var(--border-color);
+  display: flex; flex-direction: column; z-index: 100;
+  overflow: hidden;
+}
+.sidebar-header {
+  padding: 20px 16px; display: flex; align-items: center;
+  justify-content: space-between; border-bottom: 1px solid var(--border-color);
+  min-height: 64px;
+}
+.sidebar-brand { display: flex; align-items: center; gap: 10px; }
+.brand-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(0,229,255,0.12); display: flex;
+  align-items: center; justify-content: center; color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+.brand-icon-only { margin: 0 auto; }
+.brand-name { display: block; font-weight: 800; font-size: 1rem; color: var(--text-primary); letter-spacing: -0.01em; line-height: 1.2; }
+.brand-sub { display: block; font-size: 0.65rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.collapse-btn {
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+.collapse-btn:hover { color: var(--accent-cyan); border-color: var(--accent-teal); }
+
+.sidebar-nav { flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; overflow-y: auto; }
+.nav-link {
+  position: relative; display: block; border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+.nav-link-inner {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  position: relative; z-index: 1;
+}
+.nav-icon { color: var(--text-muted); transition: color var(--transition-fast); flex-shrink: 0; }
+.nav-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); white-space: nowrap; overflow: hidden; }
+.nav-link:hover .nav-icon { color: var(--text-primary); }
+.nav-link:hover .nav-label { color: var(--text-primary); }
+.nav-link-active .nav-icon { color: var(--accent-cyan); }
+.nav-link-active .nav-label { color: var(--text-primary); font-weight: 600; }
+.nav-indicator {
+  position: absolute; inset: 0; background: rgba(0,229,255,0.06);
+  border-radius: var(--radius-sm); border: 1px solid rgba(0,229,255,0.1);
+}
+
+.sidebar-footer {
+  padding: 14px; border-top: 1px solid var(--border-color);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.user-card { display: flex; align-items: center; gap: 10px; padding: 4px; }
+.user-card-collapsed { justify-content: center; }
+.user-info { overflow: hidden; }
+.user-name { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+.user-role { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: capitalize; }
+.logout-btn {
+  display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+  border-radius: var(--radius-sm); color: var(--accent-red); font-size: 0.85rem; font-weight: 500;
+  transition: background var(--transition-fast);
+  width: 100%; background: rgba(239,83,80,0.06);
+}
+.logout-btn:hover { background: rgba(239,83,80,0.12); }
+
+.mobile-menu-btn {
+  display: none; position: fixed; top: 14px; left: 14px; z-index: 90;
+  width: 40px; height: 40px; border-radius: var(--radius-sm);
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  color: var(--text-primary); align-items: center; justify-content: center;
+}
+.sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+@media (max-width: 1024px) {
+  .sidebar { transform: translateX(-100%); width: 260px !important; }
+  .sidebar-mobile-open { transform: translateX(0); }
+  .sidebar-backdrop { display: block; }
+  .mobile-menu-btn { display: flex; }
+  .desktop-only { display: none; }
+  .mobile-only { display: flex; }
+}

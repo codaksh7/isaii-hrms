@@ -1,0 +1,33 @@
+.card-title { font-size: 1rem; font-weight: 700; margin-bottom: 18px; color: var(--text-primary); }
+.donut-wrap { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center; }
+.donut-chart { width: 180px; height: 180px; flex-shrink: 0; }
+.donut-center-value { fill: var(--text-primary); font-size: 28px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+.donut-center-label { fill: var(--text-muted); font-size: 11px; font-weight: 500; }
+.donut-legend { display: flex; flex-direction: column; gap: 10px; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.recent-list { display: flex; flex-direction: column; }
+.recent-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid var(--border-color);
+  transition: background var(--transition-fast);
+}
+.recent-item:last-child { border-bottom: none; }
+.recent-item:hover { background: rgba(255,255,255,0.01); }
+.recent-item-left { display: flex; align-items: center; gap: 12px; }
+.recent-name { font-size: 0.875rem; font-weight: 600; }
+.recent-meta { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
+
+.dept-bars { display: flex; flex-direction: column; gap: 14px; }
+.dept-bar-row { display: flex; align-items: center; gap: 14px; }
+.dept-name { font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); min-width: 100px; }
+.dept-bar-track { flex: 1; height: 8px; background: var(--bg-input); border-radius: 4px; overflow: hidden; }
+.dept-bar-fill { height: 100%; background: var(--accent-teal); border-radius: 4px; }
+.dept-count { font-size: 0.82rem; font-weight: 700; color: var(--text-primary); font-family: 'JetBrains Mono', monospace; min-width: 24px; text-align: right; }
+
+@media (max-width: 768px) {
+  .donut-wrap { flex-direction: column; }
+  .donut-chart { width: 150px; height: 150px; }
+  .dept-name { min-width: 70px; font-size: 0.75rem; }
+}

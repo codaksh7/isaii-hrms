@@ -1,0 +1,43 @@
+.checkin-section {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+.clock-display { text-align: center; }
+.clock-digits { display: flex; align-items: baseline; gap: 2px; }
+.clock-digit {
+  font-family: 'JetBrains Mono', monospace; font-size: 3.2rem; font-weight: 800;
+  color: var(--text-primary); letter-spacing: -0.02em;
+}
+.clock-digit-sec { font-size: 1.8rem; color: var(--accent-cyan); }
+.clock-sep { font-size: 2.5rem; color: var(--text-muted); margin: 0 2px; animation: pulse 1s infinite; }
+.clock-date { font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px; }
+.checkin-actions { display: flex; gap: 14px; }
+.checkin-btn {
+  display: flex; align-items: center; gap: 10px; padding: 14px 36px;
+  border-radius: var(--radius-md); font-size: 1rem; font-weight: 700;
+  border: none; cursor: pointer; transition: all 0.2s;
+}
+.checkin-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.checkin-btn-in { background: var(--accent-green); color: #fff; }
+.checkin-btn-out { background: var(--accent-red); color: #fff; }
+.checkin-done {
+  display: flex; align-items: center; gap: 8px; padding: 12px 24px;
+  border-radius: var(--radius-sm); background: rgba(0,229,255,0.08);
+  color: var(--accent-cyan); font-size: 0.9rem; font-weight: 600;
+}
+.today-summary {
+  display: flex; gap: 28px; flex-wrap: wrap; justify-content: center;
+  padding-top: 16px; border-top: 1px solid var(--border-color); width: 100%;
+}
+.today-item { text-align: center; }
+.today-label { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 4px; }
+.today-value { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 600; }
+
+@media (max-width: 768px) {
+  .clock-digit { font-size: 2.2rem; }
+  .clock-digit-sec { font-size: 1.3rem; }
+  .checkin-section { padding: 22px 16px; }
+  .today-summary { gap: 16px; }
+  .checkin-btn { padding: 12px 24px; font-size: 0.9rem; }
+}
